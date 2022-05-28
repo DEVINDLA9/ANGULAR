@@ -1,0 +1,69 @@
+1. To setup anugalr execution permissions in windows use the below command.
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+
+Default Angular Folder Structure:
+--------------------------------
+1. E2E 
+	- End to End test scripts will be available here
+	- Protractor framework is used to run the end to end test cases.
+		- Jasmine and Karma runner
+	- app.po.ts -> Protractor file which will have PO file
+	- app.e2e-spec.ts file
+		- e2e -> it tells that this script is end to end script.
+		- spec -> it means a specification.
+2. node_modules
+	- this is the folder where all the modules and libraries reside.
+	- when we install any new package like below those will be residing under this module
+		npm i bootstrap 
+	- We will not touch this folder for development purpose.
+3. src
+	- this is the main work area/ app folder
+	- this is the basic structure
+	- app folder is the place where we will see the components, nodules, services, directives, pipes etc.,
+	- app.component.ts -> this file corresponds to a component.
+	- app.module.ts -> this file corresponds to a module.
+	- app.service.ts -> this is corresponds to a service.
+	- app.component.spec.ts -> this is corresponds to a Unit test scripts.
+	- assets folder
+		- styles
+		- icons
+		- images
+	- environments folder
+		- here we will be configure the variables, pipelines for DEV, QA, UAT and PROD
+	- polyfills.ts
+		- if the user browser is outdated one then it will add the ES6 functionality.
+		- it is a backward compatible
+----------------------------------------------------------------------------------
+	Booting Process:
+	- main.ts
+		- booting the angular application
+		- this is the first file that angular will check to load and how to start an angular application.
+		- We need atleast one module to be present in our main.ts
+		- By default the module that is inside main.ts is - AppModule
+		- BootStrapModule is the one which loads and start the application
+		- THIS IS NOT RELATED TO bOOT STRAP FRAMEWORK AT ALL
+		- We can change the defult AppModule to some other user defined module to load from bootstrapModule
+	- test.ts 
+		- test script for booting process
+		- All the code inside main.ts file will be tested here in this file
+----------------------------------------------------------------------------------
+	- styles.css 
+		-this is the global styles to the application
+		- it should not be heavy
+		- it should have limited typograohy, fonts, generic style classes.
+4. angular.json
+	- this is the configuration file for the angular project.
+5. karma.conf.json
+	- karma runner to run our unit test cases
+	- to configure our test scripts in this file.
+6. package.json
+	- You can write your own script commands  to build the application pipelines
+	- To understand the existing application first you should refer the package.json file
+	- It will have all the dependencies and devDependencies 
+7. package.lock.json
+	- This will resolve all the sub dependencies/ sub modules which are mentioned in the package.json file
+8. tsconfig.json -> This is to build and compile out angular application.
+9. tsconfig.spec.json
+10. tslint.json -> linting or coding standards
+
